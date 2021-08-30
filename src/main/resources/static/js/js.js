@@ -10,26 +10,22 @@ $("document").ready((e)=>{
 
 
 function connect(){
-    let socket = new SockJS("/chatServer")
+    let socket = new SockJS('/server1')
     stompClient = Stomp.over(socket)
     stompClient.connect({},function(frame) {
-        console.log("hey man")
         $(".home").css("display","none")
         $(".chat-box").css("display","block")
         stompClient.subscribe("/chat/chatBox",function (response) {
+            console.log("kkk")
             showMessage(JSON.parse(response.body))
         })
     })
 }
 
 function showMessage(message) {
-    $(".table12").prepend(`<th> ${message.name} <td>${message.text}</td></th>`)
+    console.log("ggg")
+    $(".table12").prepend(`<tr> <th> ${message.name}:  <td>${message.text}</td></th> </tr>`)
 }
-
-
-$("#send").click(()=>{
-    sendMessage()
-})
 
 function sendMessage() {
     let message = $("#message").val()
@@ -38,4 +34,13 @@ function sendMessage() {
         text:message
     }
     stompClient.send("/chatting/message",{},JSON.stringify(jasonOb))
+    showMessage(jasonOb)
+}
+
+function logout(){
+    if(stompClient!==null){
+        localStorage.removeItem("name")
+        stompClient.disconnect()
+        window.location.replace("http://localhost:8080/")
+    }
 }

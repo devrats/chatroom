@@ -46,6 +46,10 @@ public class Message {
         return text;
     }
 
+    public Message(String name) {
+        this.name = name;
+    }
+
     public void setText(String text) {
         this.text = text;
     }
