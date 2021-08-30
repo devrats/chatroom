@@ -13,18 +13,19 @@ function connect(){
     let socket = new SockJS('/server1')
     stompClient = Stomp.over(socket)
     stompClient.connect({},function(frame) {
+        $(".greet").prepend(localStorage.getItem("name"))
         $(".home").css("display","none")
         $(".chat-box").css("display","block")
         stompClient.subscribe("/chat/chatBox",function (response) {
-            console.log("kkk")
             showMessage(JSON.parse(response.body))
         })
     })
 }
 
 function showMessage(message) {
-    console.log("ggg")
-    $(".table12").prepend(`<tr> <th> ${message.name}:  <td>${message.text}</td></th> </tr>`)
+    console.log(message.name)
+    console.log(message.text)
+    $(".table12").prepend(`<span> <b><i>${message.name} : </i></b>${message.text}</span> <br>`)
 }
 
 function sendMessage() {
