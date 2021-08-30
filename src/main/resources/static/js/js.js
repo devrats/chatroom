@@ -35,7 +35,6 @@ function sendMessage() {
     }
     $("#message").val("")
     stompClient.send("/chatting/message",{},JSON.stringify(jasonOb))
-    showMessage(jasonOb)
 }
 
 function logout(){
