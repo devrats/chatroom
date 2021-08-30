@@ -33,6 +33,7 @@ function sendMessage() {
         name:localStorage.getItem("name"),
         text:message
     }
+    $("#message").val("")
     stompClient.send("/chatting/message",{},JSON.stringify(jasonOb))
     showMessage(jasonOb)
 }
