@@ -1,8 +1,9 @@
-.master-div{
+.home{
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/back-bg.jpg");
     background-size: cover;
     max-width: 100%;
     height: 100vh;
+    display: none;
 }
 
 .welcome-note{
@@ -38,4 +39,28 @@
     font-style: italic;
     font-family: "Times New Roman", cursive;
     font-size: 1.5vw;
+}
+
+.chat-box{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/JACM4W.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    max-width: 100%;
+    height: 100vh;
+}
+
+.chat-box-instruction{
+    text-align: center;
+    color: white;
+}
+
+.input-group{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.table12{
+    color: white;
+    margin-left: 25%;
+    font-size: 1.2vw;
 }
