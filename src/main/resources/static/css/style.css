@@ -44,9 +44,10 @@
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/JACM4W.jpg");
     background-attachment: fixed;
     background-size: cover;
-    max-width: 100%;
     height: 100vh;
+    width: 100%;
     display: none;
+
 }
 
 .chat-box-instruction{
