@@ -10,9 +10,7 @@ $("document").ready((e)=>{
 
 
 function scroller(){
-    console.log("llll")
    $(".chatter").css("height","auto")
-    console.log("l33l")
 }
 
 function connect(){
